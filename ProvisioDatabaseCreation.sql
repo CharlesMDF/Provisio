@@ -24,7 +24,7 @@ CREATE TABLE users
     email_address   VARCHAR(50)     NOT NULL,
     phone_number    INT             NOT NULL,
     password        VARCHAR(50)     NOT NULL,
-    password_salt   VARCHAR(15)     NOT NULL,
+    password_salt   VARCHAR(25)     NOT NULL,
     PRIMARY KEY(user_id)
 );
 
@@ -75,11 +75,11 @@ CREATE TABLE reservation_amenities
 
 /* insert user data */
 INSERT INTO users(first_name, last_name, email_address, phone_number, password, password_salt)
-  VALUES("Olivia", "Doe", "Olivia.Doe@email.com", 5551234, "mGgVsbPIz6NExDafugX1LMHu0rluczKc4eGQEZ4qCuk=", "6W7vZBKctwWMl3j");
+  VALUES("Olivia", "Doe", "Olivia.Doe@email.com", 5551234, "JE3VDHquyd9LRlLcWJTXUDY8TSSB0h7sJvol8qFHaB0=", "DMeugPY69PNgs8mJPtaj");
 INSERT INTO users(first_name, last_name, email_address, phone_number, password, password_salt)
-  VALUES("Thomas", "Johnson", "Thomas.Johnson@email.com", 5551111, "iNv1p4U9BAHZLaqfrCL0t4dsClfaCQCVQ7+aNJHF6cQ=", "FvFmHMAOVesjqr4");
+  VALUES("Thomas", "Johnson", "Thomas.Johnson@email.com", 5551111, "aZhFTDy/7X1Iq0HNuZlPLOJ2d6MFTnQaPAbpLaaoI+U=", "ELqbGocpsEKHv2qZKWF6");
 INSERT INTO users(first_name, last_name, email_address, phone_number, password, password_salt)
-  VALUES("Peter", "Kirilenko", "Peter.Kirilenko@email.com", 5553333, "RG+KWK0U386zqS2enAD9wbo0h3HSKvntxNpY0D/yNRI=", "dbNFr4m6TzkD8NT");
+  VALUES("Peter", "Kirilenko", "Peter.Kirilenko@email.com", 5553333, "zX1Eog6sweg/suHH6FQCO5Ut1NrinHu8GSQiMLmxGqA=", "wAKDdjBrM3vNLgRt0z/8");
 
 /* insert room data */
 INSERT INTO room (size, cost)
