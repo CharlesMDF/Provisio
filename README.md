@@ -9,7 +9,7 @@ Login Page: UI JSP component for login
 
 Registration Page: UI JSP component for Registration
 
-Tags: reusable static HTML components
+Header Tag: reusable nav bar HTML component
 
 User Bean: Contains methods for handling user data with the database 
 
