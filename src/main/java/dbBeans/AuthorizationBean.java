@@ -11,14 +11,14 @@ import javax.crypto.spec.PBEKeySpec;
 
 public class AuthorizationBean {
 	//returns randomly generated salt for use in encryption and storage in the database.
-	public static String generateSalt() {
+	public String generateSalt() {
 		Random rand = new SecureRandom();
 		byte[] saltArr = new byte[15];
 		rand.nextBytes(saltArr);
 		return Base64.getEncoder().encodeToString(saltArr);
 	}
 	//Returns encrypted password to save in the database
-	public static String generateEncryptedPassword(String password, String salt) {
+	public String generateEncryptedPassword(String password, String salt) {
 		//create key object from password and salt for use in encryption
 		PBEKeySpec spec = new PBEKeySpec(password.toCharArray(), salt.getBytes(), 10000, 256);
 		try {
@@ -39,7 +39,7 @@ public class AuthorizationBean {
 	}
 	
 	//used to verify passwords at user login
-	public static boolean verifyPassword(String encryptedPassword, String salt, String testPassword) {
+	public boolean verifyPassword(String encryptedPassword, String salt, String testPassword) {
 		String submittedPassword = generateEncryptedPassword(testPassword, salt);
 		return submittedPassword.equals(encryptedPassword);
 	}
