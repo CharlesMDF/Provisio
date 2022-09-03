@@ -9,7 +9,8 @@
 <body>
 <!-- NOTE: use UserBean.CreateUser to create new user accounts. Handle exceptions by displaying error messages to the user -->
 <jsp:useBean id = "userBean" class = "dbBeans.UserBean"/>
-<% response.sendRedirect("index.jsp"); %>
+
+<%  %>
 <div align="center">
 <h2>Create an Account</h2>
 <form action="Create Account" method="post">
@@ -37,5 +38,8 @@
 			<input type="submit" value="Create Account" />
 			</form>
 			</div>
+			<% if (request.getMethod().equals("POST")){
+				response.sendRedirect("index.jsp");
+			} %>
 </body>
 </html>
