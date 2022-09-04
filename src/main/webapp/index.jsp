@@ -8,7 +8,6 @@
 <title></title>
 </head>
 <body>
-  
 <div class="container-top">
   <img src="images/hotel.jpg" width = 100%>
   <div class="centered">
@@ -24,7 +23,7 @@
 <div class="container-mid">
   <div class="column-mid">
     <img src="images/login-image.jpg" width = 100% height = 300px>
-    <a href="#" class="button">Login</a>
+    <a href="user_login.jsp" class="button">Login</a>
   </div>
   <div class="column-mid">
     <img src="images/booking-image.jpg" width = 100% height = 300px>
@@ -89,5 +88,4 @@ text-align: center;
   margin: 4px 2px;
   cursor: pointer;
 }
-
 </style>
