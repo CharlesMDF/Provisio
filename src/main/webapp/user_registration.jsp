@@ -34,7 +34,7 @@
 				</tr>
 				<tr>
 					<td>Password:</td>
-					<td><input type="password" name="password" pattern=".{a-z}, .{A-Z}, .{0-9}, .{!@#\$%\^&\*]}, .{8,}" required></td>
+					<td><input type="password" name="password" pattern=".{a-z}, .{A-Z}, .{0-9}, .{!@#\$%\^&\*]}" min="8" required></td>
 				</tr></table>
 			<input type="submit" id ="create" value="Create Account" />
 			
@@ -43,7 +43,6 @@
 
 			<% if (request.getMethod().equals("POST")){
 				response.sendRedirect("index.jsp"); }  %>
-
 <style type="text/css">
 .container-Registration {
   color: black;  
