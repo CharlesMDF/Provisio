@@ -24,7 +24,7 @@
 <div class="container-mid">
   <div class="column-mid">
     <img src="images/login-image.jpg" width = 100% height = 300px>
-    <a href="#" class="button">Login</a>
+    <a href="login" class="button">Login</a>
   </div>
   <div class="column-mid">
     <img src="images/booking-image.jpg" width = 100% height = 300px>

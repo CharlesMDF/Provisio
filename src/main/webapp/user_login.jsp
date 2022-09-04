@@ -54,7 +54,7 @@
 		
 		boolean verified = authBean.verifyPassword(user.password, user.password_salt, password); //verify login info
 		out.print(verified + "<br />");
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("/Provisio");
 	}
 	}
 	
