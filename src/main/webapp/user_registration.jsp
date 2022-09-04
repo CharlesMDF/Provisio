@@ -16,27 +16,28 @@
 			<table style="with: 50%">
 				<tr>
 					<td>First Name:</td>
-					<td><input type="text" name="first_name" /></td>
+					<td><input type="text" name="first_name" required/></td>
 				</tr>
 				<tr>
 					<td>Last Name:</td>
-					<td><input type="text" name="last_name" /></td>
+					<td><input type="text" name="last_name" required/></td>
 				</tr>
 				<tr>
 					<td>Phone Number:</td>
-					<td><input type="text" name="phone_number" /></td>
+					<td><input type="text" name="phone_number" required/></td>
 				</tr>
 				<tr>
 					<td>Email Address:</td>
-					<td><input type="text" name="email_address" /></td>
+					<td><input type="text" name="email_address" required /></td>
 				</tr>
 				<tr>
 					<td>Password:</td>
-					<td><input type="password" name="password" /></td>
+					<td><input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" size="8" required></td>
 				</tr></table>
 			<input type="submit" id ="create" value="Create Account" />
 			</form>
 			</div>
+	
 			<% if (request.getMethod().equals("POST")){
 				response.sendRedirect("index.jsp");
 			} %>
