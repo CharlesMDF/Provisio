@@ -11,7 +11,7 @@
 <%@ page import ="java.sql.*" %>
  <form method="post">
 	<div class="container-login" id="login" align=center>
-           <div class="card-login"> 
+		<div class="card-login"> 
             <table border="0" cellpadding="5" cellspacing="2" >
                 <thead>
                     <tr>
@@ -48,7 +48,7 @@
 			
 			
 			boolean verified = authBean.verifyPassword(user.password, user.password_salt, password); //verify login info
-			out.print(verified + "<br />");
+			session.setAttribute("loggedInUser", user.email_address);
 			response.sendRedirect("/Provisio");
 		}
 		}
@@ -69,16 +69,17 @@
 .container-login {
   color: black;  
   background-color: #C0B9DD;
-  border: 1px solid black;
+  border-radius: 30px;
+  border: 2px solid black;
   width: 550px;
-  height: 225px;
+  height: 250px;
   position: absolute;
   top:0;
   bottom: 0;
   left: 0;
   right: 0;
-    
-    margin: auto;
+  margin: auto;
+  padding: 8px
 }
 body {
   background-color: #F7F4EA;
@@ -88,6 +89,7 @@ th{
 }
 td{
   font-size: 25px;
+  padding: 8px
 }
 .error{
 	color: red;
