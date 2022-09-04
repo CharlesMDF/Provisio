@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>Provisio Home</title>
 <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
-  
+
+<jsp:include page="Header.jsp" /> 
 <div class="container-top">
   <img src="images/hotel.jpg" width = 100%>
   <div class="centered">
@@ -39,7 +39,6 @@
 		  <%
 		}
 	%>
-  
   <div class="column-mid">
     <img src="images/booking-image.jpg"  height = 300px>
     <a href="#" class="button">Book Now</a>
@@ -96,6 +95,10 @@ text-align: center;
   grid-template-columns: auto auto auto;
   justify-content: space-evenly;
   align-content: center;
+}
+
+body{
+	background-color: #C0B9DD;
 }
 
 body{

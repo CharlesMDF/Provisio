@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
+<jsp:include page="Header.jsp" /> 
 <%@ page import ="java.sql.*" %>
  <form method="post">
 	<div class="container-login" id="login" align=center>
