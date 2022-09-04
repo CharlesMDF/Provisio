@@ -7,6 +7,8 @@
 <title>Registration</title>
 </head>
 <body>
+<%@ page import="java.util.*" %>
+<%@ page import="java.sql.*" %>
 <!-- NOTE: use UserBean.CreateUser to create new user accounts. Handle exceptions by displaying error messages to the user -->
 <jsp:useBean id = "userBean" class = "dbBeans.UserBean"/>
 
@@ -24,7 +26,7 @@
 				</tr>
 				<tr>
 					<td>Phone Number:</td>
-					<td><input type="text" name="phone_number" pattern=".{0-9}" maxlength="7" required/></td>
+					<td><input type="text" name="phone_number"  pattern=".{0-9}" maxlength="7" required/></td>
 				</tr>
 				<tr>
 					<td>Email Address:</td>
@@ -35,13 +37,14 @@
 					<td><input type="password" name="password" pattern=".{a-z}, .{A-Z}, .{0-9}, .{!@#\$%\^&\*]}, .{8,}" required></td>
 				</tr></table>
 			<input type="submit" id ="create" value="Create Account" />
+			
 			</form>
 			</div>
 
 			<% if (request.getMethod().equals("POST")){
-				response.sendRedirect("index.jsp");
-			} %>
-			<style type="text/css">
+				response.sendRedirect("index.jsp"); }  %>
+
+<style type="text/css">
 .container-Registration {
   color: black;  
   background-color: #C0B9DD;
