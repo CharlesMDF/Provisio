@@ -16,23 +16,23 @@
 			<table style="with: 50%">
 				<tr>
 					<td>First Name:</td>
-					<td><input type="text" name="first_name" required/></td>
+					<td><input type="text" name="first_name" maxlength="20" required/></td>
 				</tr>
 				<tr>
 					<td>Last Name:</td>
-					<td><input type="text" name="last_name" required/></td>
+					<td><input type="text" name="last_name" maxlength="20" required/></td>
 				</tr>
 				<tr>
 					<td>Phone Number:</td>
-					<td><input type="text" name="phone_number" required/></td>
+					<td><input type="text" name="phone_number" maxlength="7" required/></td>
 				</tr>
 				<tr>
 					<td>Email Address:</td>
-					<td><input type="text" name="email_address" required /></td>
+					<td><input type="text" name="email_address" maxlength="20" required /></td>
 				</tr>
 				<tr>
 					<td>Password:</td>
-					<td><input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required></td>
+					<td><input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="8" required></td>
 				</tr></table>
 			<input type="submit" id ="create" value="Create Account" />
 			</form>
