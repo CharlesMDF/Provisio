@@ -32,7 +32,7 @@
 				</tr>
 				<tr>
 					<td>Password:</td>
-					<td><input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" size="8" required></td>
+					<td><input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required></td>
 				</tr></table>
 			<input type="submit" id ="create" value="Create Account" />
 			</form>
