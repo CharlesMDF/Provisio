@@ -8,12 +8,22 @@
 </head>
 <body>
 	<div id = "navbar"> 
-    	<a href = "index.jsp">Home</a>
+    	<a href = "/Provisio">Home</a>
         <a href = "#experience">About Us</a>
         <a href = "#contact">Contact Us</a>
         <a href = "#locations">Locations</a>
-        <a href = "user_login.jsp">Login</a>
-        <a href = "user_registration.jsp">Create Account</a>
+        <% 
+        	if(session.getAttribute("loggedInUser") == null){
+        		%>
+	        		<a href = "login">Login</a>
+	        		<a href = "register">Create Account</a>
+        		<%
+        	} else{
+        		%>
+        			<a href = "#loyalty">Loyalty Points</a>
+        		<%
+        	}
+        %>
         <a href = "#bookroom">Book Room</a>
     </div>
 </body>

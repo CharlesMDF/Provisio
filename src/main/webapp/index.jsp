@@ -27,24 +27,24 @@
 		if(session.getAttribute("loggedInUser") != null){
 			%> 
 			<div class="column-mid">
-    			<img src="images/login-image.jpg" height = 300px>
+    			<img class="link-image" src="images/login-image.jpg" height = 300px>
     			<a href="#" class="button">Loyalty Points</a>
   			</div><%
 		} else{
 			%>
 			<div class="column-mid">
-			    <img src="images/login-image.jpg"  height = 300px>
+			    <img class="link-image" src="images/login-image.jpg"  height = 300px>
 			    <a href="login" class="button">Login</a>
 		  	</div>
 		  <%
 		}
 	%>
   <div class="column-mid">
-    <img src="images/booking-image.jpg"  height = 300px>
+    <img class="link-image" src="images/booking-image.jpg"  height = 300px>
     <a href="#" class="button">Book Now</a>
   </div>
   <div class="column-mid">
-    <img src="images/locations-image.jpg"  height = 300px>
+    <img class="link-image" src="images/locations-image.jpg"  height = 300px>
     <a href="#" class="button">Locations</a>
   </div>
 </div>
@@ -95,6 +95,10 @@ text-align: center;
   grid-template-columns: auto auto auto;
   justify-content: space-evenly;
   align-content: center;
+}
+
+.link-image{
+	border: 2px solid black;
 }
 
 body{
