@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>Provisio Home</title>
+<link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
+
+<jsp:include page="Header.jsp" /> 
 <div class="container-top">
   <img src="images/hotel.jpg" width = 100%>
   <div class="centered">
@@ -22,7 +24,7 @@
 
 <div class="container-mid">
   <div class="column-mid">
-    <img src="images/login-image.jpg" width = 100% height = 300px>
+    <img src="images/login-image.jpg" width = 100% height = 300px >
     <a href="user_login.jsp" class="button">Login</a>
   </div>
   <div class="column-mid">
@@ -88,4 +90,9 @@ text-align: center;
   margin: 4px 2px;
   cursor: pointer;
 }
+
+body{
+	background-color: #C0B9DD;
+}
+
 </style>

@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+body{
+	font-family: "Georgia"
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.button {
+  font-weight: bolder;
+  width: 200px;
+  background-color: #F7F4EA;
+  border: 2px solid #80A1D4;
+  color:#80A1D4;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+input{
+	background-color: #F7F4EA;
+	border: 1px solid black;
+	padding: 6px;
+}
