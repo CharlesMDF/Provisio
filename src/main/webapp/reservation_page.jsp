@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import ="java.util.Date" %>
+    <%@ page import ="java.text.SimpleDateFormat"%>
+    <%@ page import ="java.util.concurrent.TimeUnit"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +31,6 @@
 						<option value="3">Minneapolis</option>
 					</select></td>
 			</tr>
-			<!-- Check with Charles about Room size on sql file 
 			<tr>
 				<td>Room Size:</td>
 					<td><select id="selectRoomSize" name = "number_of_guests">
@@ -38,7 +40,6 @@
 						<option value="4">King</option>
 					</select></td>
 			</tr>
-			-->
 			<tr>
 				<td>Number of Guests:</td>
 					<td><select id="selectNumberOfGuests" name ="number_of_guests">
@@ -58,8 +59,6 @@
 			<td><input type="date" name="check_out"></td>
 			</tr>
 		</table>	
-		
-		<!-- Ask Charles about amenities table -->
 		<h2 id = "title2">Optional Amenities</h2>
 		<table id ="amenities">
 			<tr>
@@ -78,12 +77,16 @@
 		<table id = "review">
 			<tr>
 				<td>
-					<input id = "review_button" class="button" type="submit" value="Review" />
+					<a href="reservation_summary.jsp" class="button">Review</a>
 				</td>
 			</tr>	
 		</table>
-
 	</form>
+	<%
+		if(session.getAttribute("loggedInUser") == null){
+			response.sendRedirect("user_login.jsp");
+		}
+	%>
 </div>
 
 
