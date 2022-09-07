@@ -23,16 +23,28 @@
 </div>
 
 <div class="container-mid">
+	<%
+		if(session.getAttribute("loggedInUser") != null){
+			%> 
+			<div class="column-mid">
+    			<img class="link-image" src="images/login-image.jpg" height = 300px>
+    			<a href="#" class="button">Loyalty Points</a>
+  			</div><%
+		} else{
+			%>
+			<div class="column-mid">
+			    <img class="link-image" src="images/login-image.jpg"  height = 300px>
+			    <a href="login" class="button">Login</a>
+		  	</div>
+		  <%
+		}
+	%>
   <div class="column-mid">
-    <img src="images/login-image.jpg" width = 100% height = 300px >
-    <a href="user_login.jsp" class="button">Login</a>
-  </div>
-  <div class="column-mid">
-    <img src="images/booking-image.jpg" width = 100% height = 300px>
+    <img class="link-image" src="images/booking-image.jpg"  height = 300px>
     <a href="#" class="button">Book Now</a>
   </div>
   <div class="column-mid">
-    <img src="images/locations-image.jpg" width = 100% height = 300px>
+    <img class="link-image" src="images/locations-image.jpg"  height = 300px>
     <a href="#" class="button">Locations</a>
   </div>
 </div>
@@ -54,6 +66,7 @@ text-align: center;
   position: relative;
   text-align: center;
   color: black;
+  min-width: 600px;
 }
 
 .centered {
@@ -70,25 +83,30 @@ text-align: center;
 }
 
 .column-mid {
+  width: 450px;
   float: left;
-  width: 33.33%;
-  padding: 75px;
   text-align:center;
 }
 
-.button {
-  font-weight: bolder;
-  width: 150px;
-  background-color: #F7F4EA;
-  border: 2px solid #80A1D4;
-  color:#80A1D4;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+.container-mid{
+  padding: 75px;
+  display: grid;
+  column-gap: 30px;
+  grid-template-columns: auto auto auto;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+.link-image{
+	border: 2px solid black;
+}
+
+body{
+	background-color: #C0B9DD;
+}
+
+body{
+	background-color: #C0B9DD;
 }
 
 body{

@@ -26,11 +26,11 @@ public class UserBean {
 		
 		//insert user data into database
 		try{
-			provisio.getStmt().executeUpdate("INSERT INTO Users(first_name, last_name, phone_number, encryptedPassword, salt)"+
+			provisio.getStmt().executeUpdate("INSERT INTO Users(first_name, last_name, email_address, phone_number, password, password_salt)"+
 		  "VALUES('"+ first_name + "', '" + last_name +"', '" + email_address +"', '" + phone_number +"', '" + encryptedPassword +"', '" + salt +"');");
 		}
 		catch(java.sql.SQLException e){
-		      System.out.println("ERROR: " + e + "<br />");
+		      System.out.println("ERROR: " + e);
 		      throw new SQLException(e);
 		}
 		finally {

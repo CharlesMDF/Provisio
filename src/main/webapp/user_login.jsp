@@ -56,7 +56,7 @@
 		
 		catch(Exception e){
 			%><div class='error'><%
-		       out.println("<body class='error'>Something went wrong!! Please try again");       //if login info is not valid, error message
+		       out.println("<p class='error'>Something went wrong!! Please try again </p>");       //if login info is not valid, error message
 			%></div><%   
 		}    
 		%>
@@ -80,7 +80,7 @@
   left: 0;
   right: 0;
   margin: auto;
-  padding: 8px
+  padding: 16px
 }
 body {
   background-color: #F7F4EA;
