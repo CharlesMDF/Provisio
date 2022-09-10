@@ -13,7 +13,7 @@
         <a href = "#contact">Contact Us</a>
         <a href = "#locations">Locations</a>
         <% 
-        	if(session.getAttribute("loggedInUser") == null){
+        	if(session.getAttribute("user_id") == null){
         		%>
 	        		<a href = "login">Login</a>
 	        		<a href = "register">Create Account</a>

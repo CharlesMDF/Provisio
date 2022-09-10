@@ -34,73 +34,71 @@
                         </td>                        
                     </tr>                    
                 </tbody>
-            </table>            
-        </form>
-        <%@ page import="Objects.User" %>
-		<jsp:useBean id="userBean" class="dbBeans.UserBean" />
-		<jsp:useBean id="authBean" class="dbBeans.AuthorizationBean" />
-		<%
+            </table>
+            </div>
+	</div>          
+    </form>
+    <%@ page import="Objects.User" %>
+	<jsp:useBean id="userBean" class="dbBeans.UserBean" />
+	<jsp:useBean id="authBean" class="dbBeans.AuthorizationBean" />
+	<%
 		try {
-		if (request.getMethod().equals("POST")){
-		String username = request.getParameter("username");   //gets entered username
-	    String password = request.getParameter("password");   //gets entered password
-	    
-			User user = userBean.getUser(username);  //goes to user.java to compare to database info
-			
-			
-			boolean verified = authBean.verifyPassword(user.password, user.password_salt, password); //verify login info
-			session.setAttribute("loggedInUser", user.email_address);
-			response.sendRedirect("/Provisio");
+			if (request.getMethod().equals("POST")){
+				String username = request.getParameter("username");   //gets entered username
+			   	String password = request.getParameter("password");   //gets entered password
+			   
+				User user = userBean.getUser(username);  //goes to user.java to compare to database info
+
+				boolean verified = authBean.verifyPassword(user.password, user.password_salt, password); //verify login info
+				session.setAttribute("user_id", user.id);
+				response.sendRedirect("/Provisio");
+			}
 		}
-		}
-		
 		catch(Exception e){
 			%><div class='error'><%
-		       out.println("<body class='error'>Something went wrong!! Please try again");       //if login info is not valid, error message
-			%></div><%   
+		     out.println("<body class='error'>Something went wrong!! Please try again");//if login info is not valid, error message
+		%></div><%   
 		}    
-		%>
-        </div>
-	</div>
-<!-- NOTE: use userBean to get user account information by email and use the authorization bean to verify user password. 
-		   you will need to get the encrypted password and salt from the database for comparison using Authorization.verifyPassword method-->
-	<!-- Sample Code for Getting a User and verifying them-->
-	
-<style type="text/css">
-.container-login {
-  color: black;  
-  background-color: #C0B9DD;
-  border-radius: 30px;
-  border: 2px solid black;
-  width: 550px;
-  height: 250px;
-  position: absolute;
-  top:0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  padding: 8px
-}
-body {
-  background-color: #F7F4EA;
-}
-th{
-  font-size: 55px;
-}
-td{
-  font-size: 25px;
-  padding: 8px
-}
-.error{
-	color: red;
-	font-size: 20px;
-}
-.underline-header{
-	border-bottom: solid grey 1px;
-	font-size: 50px
-}
-</style>
-
+	%>
 </body>
+<style type="text/css">
+	.container-login {
+	  color: black;  
+	  background-color: #C0B9DD;
+	  border-radius: 30px;
+	  border: 2px solid black;
+	  width: 550px;
+	  height: 250px;
+	  position: absolute;
+	  top:0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  margin: auto;
+	  padding: 8px
+	}
+	
+	body {
+	  background-color: #F7F4EA;
+	}
+	
+	th{
+	  font-size: 55px;
+	}
+	
+	td{
+	  font-size: 25px;
+	  padding: 8px
+	}
+	
+	.error{
+		color: red;
+		font-size: 20px;
+	}
+	
+	.underline-header{
+		border-bottom: solid grey 1px;
+		font-size: 50px
+	}
+</style>
 </html>
