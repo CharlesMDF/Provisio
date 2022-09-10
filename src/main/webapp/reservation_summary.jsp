@@ -1,39 +1,56 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-
 <%@ page import ="java.util.Date" %>
 <%@ page import ="java.text.SimpleDateFormat"%>
 <%@ page import ="java.util.concurrent.TimeUnit"%>
+
+<!DOCTYPE html>
 
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Reservation Summary</title>
+<link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
-
-	<%if (request.getMethod().equals("POST")){
-		out.print(request.getParameter("location_name"));
-	%>
+	<%if (request.getMethod().equals("POST")){	%>
 	<form action="${pageContext.request.contextPath}reservation_page.jsp">
-		<h4>Reservation Summary</h4>
-		<table>
+		<h2>Reservation Summary</h2>
+		<table id="summary">
 			<tr>
-				<td>Name:<%out.print(request.getParameter("guest_name"));%></td>
+				<td>Name:  <%out.print(request.getParameter("guest_name"));%></td>
 			</tr>
 			<tr>
-			<td>Location:</td>
-			<td>Room size:</td>
-			<td>Number of Guests:</td>
-			<td>Check-in Date:</td>
-			<td>Check-out Date:</td>
-			<td>Optional Amenities:</td>
-			<td>Loyalty Points:</td>
+				<td>Location:  <%out.print(request.getParameter("location_name"));%></td>
+			</tr>
 			<tr>
+				<td>Room size:  <%out.print(request.getParameter("room-size"));%></td>
+			</tr>
+			<tr>
+				<td>Number of Guests:  <%out.print(request.getParameter("number_of_guests"));%></td>
+			</tr>
+			<tr>
+				<td>Check-in Date:  <%out.print(request.getParameter("check_in"));%></td>
+			</tr>
+			<tr>
+				<td>Check-out Date:  <%out.print(request.getParameter("check_out"));%></td>
+			</tr>
+			<tr>
+				<td>Optional Amenities:
+				<%out.print(request.getParameter("amenity1"));%>
+				<%out.print(request.getParameter("amenity2"));%>
+				<%out.print(request.getParameter("amenity3"));%>
+				</td>
+			</tr>
+			<tr>
+				<td>Loyalty Points:</td>
+			</tr>
+			<tr>
+				<td>Total Cost:</td>
+			</tr>
 		</table>
-		<div class="form-footer">
-	        <button type="submit" class="button btn-primary">Confirm Booking</button>
+		<div id="footer">
+	        <button type="submit" class="button">Submit</button>
 	        <button type="reset" class="button">Cancel</button>
 	     </div>
 	</form>
@@ -69,4 +86,65 @@
 				//}  
 			%> -->
 </body>
+<style type="text/css">
+
+body{
+	background-color: #C0B9DD;
+}
+
+h2{
+	text-align: center;
+	margin-top:25px;
+	margin-bottom:25px;
+	margin-bottom:25px;
+	font-size: 55px;
+}
+	
+table{
+	background-color: #F7F4EA;
+	border-radius: 30px;
+	width: 500px;
+	border: 2px solid black;
+	height: 500px;
+	float: right;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	padding: 8px
+	
+}	
+	
+th{
+	font-size: 55px;
+}
+	
+td{
+	font-size: 25px;
+	padding: 6px;
+}
+.button {
+  font-weight: bolder;
+  width: 200px;
+  background-color: #F7F4EA;
+  border: 2px solid #80A1D4;
+  color:#80A1D4;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+div{
+margin-top: 4%;
+bottom:0;
+right: 5%;
+position: right;
+
+}
+
+</style>
 </html>
