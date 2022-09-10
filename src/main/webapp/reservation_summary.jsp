@@ -16,44 +16,52 @@
 	<%if (request.getMethod().equals("POST")){	%>
 	<form action="${pageContext.request.contextPath}reservation_page.jsp">
 		<h2>Reservation Summary</h2>
-		<table id="summary">
-			<tr>
-				<td>Name:  <%out.print(request.getParameter("guest_name"));%></td>
-			</tr>
-			<tr>
-				<td>Location:  <%out.print(request.getParameter("location_name"));%></td>
-			</tr>
-			<tr>
-				<td>Room size:  <%out.print(request.getParameter("room-size"));%></td>
-			</tr>
-			<tr>
-				<td>Number of Guests:  <%out.print(request.getParameter("number_of_guests"));%></td>
-			</tr>
-			<tr>
-				<td>Check-in Date:  <%out.print(request.getParameter("check_in"));%></td>
-			</tr>
-			<tr>
-				<td>Check-out Date:  <%out.print(request.getParameter("check_out"));%></td>
-			</tr>
-			<tr>
-				<td>Optional Amenities:
-				<%out.print(request.getParameter("amenity1"));%>
-				<%out.print(request.getParameter("amenity2"));%>
-				<%out.print(request.getParameter("amenity3"));%>
-				</td>
-			</tr>
-			<tr>
-				<td>Loyalty Points:</td>
-			</tr>
-			<tr>
-				<td>Total Cost:</td>
-			</tr>
-		</table>
+		
+		<div id="image"> 
+			<img src="images/airline.jpg">
+		</div>
+		
+		<div id="table">
+			<table id="summary">
+				<tr>
+					<td>Name:  <%out.print(request.getParameter("guest_name"));%></td>
+				</tr>
+				<tr>
+					<td>Location:  <%out.print(request.getParameter("location_name"));%></td>
+				</tr>
+				<tr>
+					<td>Room size:  <%out.print(request.getParameter("room-size"));%></td>
+				</tr>
+				<tr>
+					<td>Number of Guests:  <%out.print(request.getParameter("number_of_guests"));%></td>
+				</tr>
+				<tr>
+					<td>Check-in Date:  <%out.print(request.getParameter("check_in"));%></td>
+				</tr>
+				<tr>
+					<td>Check-out Date:  <%out.print(request.getParameter("check_out"));%></td>
+				</tr>
+				<tr>
+					<td>Optional Amenities:
+					<%out.print(request.getParameter("amenity1"));%>
+					<%out.print(request.getParameter("amenity2"));%>
+					<%out.print(request.getParameter("amenity3"));%>
+					</td>
+				</tr>
+				<tr>
+					<td>Loyalty Points:</td>
+				</tr>
+				<tr>
+					<td>Total Cost:</td>
+				</tr>	
+			</table>
+		</div>
 		<div id="footer">
 	        <button type="submit" class="button">Submit</button>
 	        <button type="reset" class="button">Cancel</button>
 	     </div>
 	</form>
+	
 	<%
 	
 	}
@@ -91,7 +99,6 @@
 body{
 	background-color: #C0B9DD;
 }
-
 h2{
 	text-align: center;
 	margin-top:25px;
@@ -99,21 +106,24 @@ h2{
 	margin-bottom:25px;
 	font-size: 55px;
 }
-	
+img { 
+	height:750px; 
+	width:500px; 
+	float: left; 
+}	
 table{
 	background-color: #F7F4EA;
 	border-radius: 30px;
 	width: 500px;
 	border: 2px solid black;
 	height: 500px;
-	float: right;
 	top:0;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	margin: auto;
-	padding: 8px
-	
+	padding: 8px;
+	float:right;
 }	
 	
 th{
