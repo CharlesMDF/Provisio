@@ -47,6 +47,7 @@
 			int points = ((int)dayDiff * 150);
 		%>
 		<!-- Brittany, you will need this or something similar to calulate loyalty points 
+
 			<% if (request.getMethod().equals("POST")){
 				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 				Date checkin = format.parse(request.getParameter("check_in"));
@@ -54,6 +55,7 @@
 				long timeDiff = checkout.getTime() - checkin.getTime();
 				long dayDiff = TimeUnit.DAYS.convert(timeDiff,TimeUnit.MILLISECONDS);
 				int points = ((int)dayDiff * 150);
+
 		}  %> -->
 </body>
 </html>

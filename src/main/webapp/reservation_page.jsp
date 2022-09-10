@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-<!DOCTYPE html>
     <%@ page import ="java.util.Date" %>
     <%@ page import ="java.text.SimpleDateFormat"%>
     <%@ page import ="java.util.concurrent.TimeUnit"%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -93,6 +92,7 @@
 
 
 <style type="text/css">
+
 hr {
 	width: 75%;
 	height: 5px;
@@ -102,6 +102,7 @@ hr {
 	margin-top: 5px;
 	margin-bottom: 25px;
 }
+
 #title{
 	text-align: center;
 	margin-top:25px;
@@ -109,6 +110,7 @@ hr {
 	margin-bottom:25px;
 	font-size: 55px;
 }
+
 #title2{
 	text-align: center;
 	margin-top:25px;
@@ -116,6 +118,7 @@ hr {
 	font-size: 35px;
 	margin-right: -80px;
 }
+
 input{
 	background-color: #F7F4EA;
 	border: 1px solid black;
@@ -123,6 +126,7 @@ input{
 	width:300px;
 	margin:10px;
 }
+
 select{
 	background-color: #F7F4EA;
 	border: 1px solid black;
@@ -130,15 +134,19 @@ select{
 	width:300px;
 	margin:10px;
 }
+
 * {
   box-sizing: border-box;
 }
+
 body{
 	background-color: #C0B9DD;
 }
+
 #reservation{
 	overflow: hidden;
 }
+
 #userInputs {
 	padding: 25px;
 	top:0;
@@ -153,6 +161,7 @@ body{
 	width: 50%; float: right; 
     margin-right: -80px;
 }
+
 #review{
 	width: 100%; 
 	display: flex;
@@ -167,4 +176,6 @@ td{
 	font-size: 25px;
 	padding: 4px;
 }
+
 </style>
+
