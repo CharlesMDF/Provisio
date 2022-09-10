@@ -6,6 +6,10 @@
 <%@ page import ="java.text.SimpleDateFormat"%>
 <%@ page import ="java.util.concurrent.TimeUnit"%>
 
+<%@ page import="Objects.Room" %>
+<%@ page import="java.util.ArrayList" %> 
+<jsp:useBean id = "roomBean" class = "dbBeans.RoomBean"/>
+
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -14,7 +18,7 @@
 <body>
 
 	<%if (request.getMethod().equals("POST")){
-		out.print(request.getParameter("location_name"));
+		out.print(request.getParameter("amenity1"));
 	%>
 	<form action="${pageContext.request.contextPath}reservation_page.jsp">
 		<h4>Reservation Summary</h4>
@@ -68,5 +72,13 @@
 				//int points = ((int)dayDiff * 150);
 				//}  
 			%> -->
+			
+			<%
+				/*ArrayList<Room> rooms = roomBean.getRooms();
+				
+				for(Room room : rooms){
+					out.print("<option value='" + room.id + "'>" + room.size + "</option>");
+				}*/
+			%>
 </body>
 </html>

@@ -39,8 +39,8 @@
 	</div>          
     </form>
     <%@ page import="Objects.User" %>
-	<jsp:useBean id="userBean" class="dbBeans.UserBean" />
-	<jsp:useBean id="authBean" class="dbBeans.AuthorizationBean" />
+		<jsp:useBean id="userBean" class="dbBeans.UserBean" />
+		<jsp:useBean id="authBean" class="dbBeans.AuthorizationBean" />
 	<%
 		try {
 			if (request.getMethod().equals("POST")){
