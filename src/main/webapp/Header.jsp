@@ -9,7 +9,7 @@
 <body>
 	<div id = "navbar"> 
     	<a href = "/Provisio">Home</a>
-        <a href = "#experience">About Us</a>
+        <a href = "about_us.jsp">About Us</a>
         <a href = "#contact">Contact Us</a>
         <a href = "#locations">Locations</a>
         <% 
