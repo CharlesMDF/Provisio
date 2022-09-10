@@ -56,7 +56,7 @@
 		
 		catch(Exception e){
 			%><div class='error'><%
-		       out.println("<p class='error'>Something went wrong!! Please try again </p>");       //if login info is not valid, error message
+		       out.println("<body class='error'>Something went wrong!! Please try again");       //if login info is not valid, error message
 			%></div><%   
 		}    
 		%>
@@ -80,7 +80,7 @@
   left: 0;
   right: 0;
   margin: auto;
-  padding: 16px
+  padding: 8px
 }
 body {
   background-color: #F7F4EA;
@@ -96,13 +96,10 @@ td{
 	color: red;
 	font-size: 20px;
 }
-
 .underline-header{
 	border-bottom: solid grey 1px;
 	font-size: 50px
 }
-
-
 </style>
 
 </body>

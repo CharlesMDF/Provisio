@@ -93,7 +93,6 @@
 
 <style type="text/css">
 
-
 hr {
 	width: 75%;
 	height: 5px;
@@ -136,7 +135,6 @@ select{
 	margin:10px;
 }
 
-
 * {
   box-sizing: border-box;
 }
@@ -150,7 +148,6 @@ body{
 }
 
 #userInputs {
-
 	padding: 25px;
 	top:0;
 	bottom: 0;
@@ -170,7 +167,6 @@ body{
 	display: flex;
 	justify-content: center;
 }
-
 	
 th{
 	font-size: 55px;
@@ -182,3 +178,4 @@ td{
 }
 
 </style>
+
