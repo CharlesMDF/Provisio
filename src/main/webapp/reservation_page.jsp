@@ -17,6 +17,11 @@
 	<h1 id = "title">Book Your Vacation</h1>
 	<hr>
 	<div id = "reservation">
+		<%if (request.getMethod().equals("POST")){
+			if(request.getParameter("submit") == null){
+				response.sendRedirect("user_login.jsp");
+			}
+		}%>
 		<form method="post" action="booking/summary">
 			<table id = "userInputs">
 				<tr>
@@ -55,11 +60,11 @@
 				</tr>
 				<tr>
 					<td>Check-in Date:</td>
-					<td><input type="date" name="check_in"></td>
+					<td><input type="date" name="check_in" required></td>
 				</tr>
 				<tr>
 					<td>Check-out Date:</td>
-				<td><input type="date" name="check_out"></td>
+				<td><input type="date" name="check_out" required></td>
 				</tr>
 			</table>	
 			<h2 id = "title2">Optional Amenities</h2>
@@ -87,7 +92,7 @@
 		</form>
 		<%
 			if(session.getAttribute("user_id") == null){
-				response.sendRedirect("user_login.jsp");
+				response.sendRedirect("login");
 			}
 		%>
 	</div>

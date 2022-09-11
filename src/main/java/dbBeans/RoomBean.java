@@ -26,4 +26,27 @@ public class RoomBean {
 		}
 		return rooms;
 	}
+	
+	public Room getRoomById(String id) {
+		DatabaseBean provisio = new DatabaseBean();
+		provisio.connectDatabase();
+		
+		ResultSet resultSet = null;
+		
+		Room result = null;
+		
+		try{
+			resultSet = provisio.getStmt().executeQuery("SELECT * FROM room WHERE room_id='" + id + "'");
+			resultSet.next(); 
+			result =  new Room(resultSet.getInt("room_id"), resultSet.getString("size"), resultSet.getInt("cost"));
+		}
+		catch(java.sql.SQLException e){
+			System.out.println(e);
+		}
+		finally {
+			provisio.closeDatabase();
+		}
+		
+		return result;
+	}
 }

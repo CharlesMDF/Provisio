@@ -106,13 +106,5 @@ body{
 	background-color: #C0B9DD;
 }
 
-body{
-	background-color: #C0B9DD;
-}
-
-body{
-	background-color: #C0B9DD;
-}
-
 </style>
 </html>
