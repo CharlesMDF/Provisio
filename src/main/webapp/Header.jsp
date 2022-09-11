@@ -9,14 +9,14 @@
 <body>
 	<div id = "navbar"> 
     	<a href = "/Provisio">Home</a>
-        <a href = "about_us.jsp">About Us</a>
+        <a href = "/Provisio/about_us">About Us</a>
         <a href = "#contact">Contact Us</a>
         <a href = "#locations">Locations</a>
         <% 
         	if(session.getAttribute("user_id") == null){
         		%>
-	        		<a href = "login">Login</a>
-	        		<a href = "register">Create Account</a>
+	        		<a href = "/Provisio/login">Login</a>
+	        		<a href = "/Provisio/register">Create Account</a>
         		<%
         	} else{
         		%>
@@ -24,10 +24,10 @@
         		<%
         	}
         %>
-        <a href = "#bookroom">Book Room</a>
+        <a href = "/Provisio/booking">Book Room</a>
     </div>
 </body>
-</html>
+
 
 <style type="text/css">
 #navbar {
@@ -54,3 +54,5 @@
     color:#C0B9DD;
 }
 </style>
+
+</html>

@@ -60,11 +60,11 @@
 				</tr>
 				<tr>
 					<td>Check-in Date:</td>
-					<td><input type="date" name="check_in"></td>
+					<td><input type="date" name="check_in" required></td>
 				</tr>
 				<tr>
 					<td>Check-out Date:</td>
-				<td><input type="date" name="check_out"></td>
+				<td><input type="date" name="check_out" required></td>
 				</tr>
 			</table>	
 			<h2 id = "title2">Optional Amenities</h2>
