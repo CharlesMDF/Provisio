@@ -92,7 +92,7 @@
 		</form>
 		<%
 			if(session.getAttribute("user_id") == null){
-				response.sendRedirect("user_login.jsp");
+				response.sendRedirect("login");
 			}
 		%>
 	</div>

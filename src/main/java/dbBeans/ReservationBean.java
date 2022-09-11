@@ -2,26 +2,27 @@ package dbBeans;
 
 import java.sql.*;
 import java.sql.Statement;
-import java.util.Date;
 
 public class ReservationBean {
 
 	public int CreateReservation(
-			Date check_in,
-			Date check_out,
+			String check_in,
+			String check_out,
             String guest_name,
             String location_name, 
-            int number_of_guests,
-            int loyalty_points,
-            int user_id,
-            int room_id) throws Exception {
+            String number_of_guests,
+            String loyalty_points,
+            String user_id,
+            String room_id) throws Exception {
 		DatabaseBean provisio = new DatabaseBean();
 		provisio.connectDatabase();
 
 		//insert user data into database
 		try{
-			provisio.getStmt().executeUpdate("INSERT INTO reservation(check_in, check_out, guest_name, location_name, number_of_guests, loyalty_points, user_id, room_id)"+
-			"VALUES('"+ guest_name + "', '" + check_in +"', '" + check_out +"', '" + location_name +"', '" + number_of_guests +"');", 
+			provisio.getStmt().executeUpdate("INSERT INTO reservations(check_in, check_out, guest_name, location_name, "
+					+ "number_of_guests, loyalty_points, user_id, room_id)"+
+			"VALUES('"+ check_in + "', '" + check_out +"', '" + guest_name +"', '" + location_name +"', '" 
+					+ number_of_guests +"','" + loyalty_points + "','" + user_id + "','" + room_id + "');", 
 			Statement.RETURN_GENERATED_KEYS);
 			ResultSet resultSet = provisio.getStmt().getGeneratedKeys();
 			resultSet.next();
