@@ -12,7 +12,7 @@
 </head>
 <body>
 	<jsp:useBean id = "reservationBean" class = "dbBeans.ReservationBean"/>
-	<jsp:include page="Header.jsp" /> 
+	<jsp:include page="Header.jsp" />
 	<img src="images/reservation.jpg" width = 100%>
 	<h1 id = "title">Book Your Vacation</h1>
 	<hr>
@@ -33,6 +33,7 @@
 				</tr>
 				<tr>
 					<td>Room Size:</td>
+					
 						<td><select id="selectRoomSize" name = "room-size">
 							<option value="1">Double</option>
 							<option value="2">Queen</option>
@@ -42,13 +43,15 @@
 				</tr>
 				<tr>
 					<td>Number of Guests:</td>
-						<td><select id="selectNumberOfGuests" name ="number_of_guests">
-							<option value="1">One</option>
-							<option value="2">Two</option>
-							<option value="3">Three</option>
-							<option value="4">Four</option>
-							<option value="5">Five</option>
-						</select></td>
+						<td>
+							<select id="selectNumberOfGuests" name ="number_of_guests">
+								<option value="1">One</option>
+								<option value="2">Two</option>
+								<option value="3">Three</option>
+								<option value="4">Four</option>
+								<option value="5">Five</option>
+							</select>
+						</td>
 				</tr>
 				<tr>
 					<td>Check-in Date:</td>

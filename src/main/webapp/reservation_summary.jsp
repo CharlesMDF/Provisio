@@ -5,6 +5,9 @@
 <%@ page import ="java.util.concurrent.TimeUnit"%>
 
 <!DOCTYPE html>
+<%@ page import="Objects.Room" %>
+<%@ page import="java.util.ArrayList" %> 
+<jsp:useBean id = "roomBean" class = "dbBeans.RoomBean"/>
 
 <html>
 <head>
@@ -93,6 +96,14 @@
 				//int points = ((int)dayDiff * 150);
 				//}  
 			%> -->
+			
+			<%
+				/*ArrayList<Room> rooms = roomBean.getRooms();
+				
+				for(Room room : rooms){
+					out.print("<option value='" + room.id + "'>" + room.size + "</option>");
+				}*/
+			%>
 </body>
 <style type="text/css">
 
