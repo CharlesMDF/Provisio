@@ -17,6 +17,11 @@
 	<h1 id = "title">Book Your Vacation</h1>
 	<hr>
 	<div id = "reservation">
+		<%if (request.getMethod().equals("POST")){
+			if(request.getParameter("submit") == null){
+				response.sendRedirect("user_login.jsp");
+			}
+		}%>
 		<form method="post" action="booking/summary">
 			<table id = "userInputs">
 				<tr>

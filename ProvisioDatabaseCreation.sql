@@ -83,13 +83,13 @@ INSERT INTO users(first_name, last_name, email_address, phone_number, password, 
 
 /* insert room data */
 INSERT INTO room (size, cost)
-VALUES('double','110');
+VALUES('Double','110');
 INSERT INTO room (size, cost)
-VALUES('queen','125');
+VALUES('Queen','125');
 INSERT INTO room (size, cost)
-VALUES('double_queen','150');
+VALUES('Double_Queen','150');
 INSERT INTO room (size, cost)
-VALUES('king','165');
+VALUES('King','165');
 
 /* insert amenities data */
 INSERT INTO amenities(amenities_name, cost) 
