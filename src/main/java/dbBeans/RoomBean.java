@@ -38,7 +38,7 @@ public class RoomBean {
 		try{
 			resultSet = provisio.getStmt().executeQuery("SELECT * FROM room WHERE room_id='" + id + "'");
 			resultSet.next(); 
-			result =  new Room(resultSet.getInt("room_id"), resultSet.getString("size"), resultSet.getInt("cost"));
+			result =  new Room(resultSet.getInt("room_id"), resultSet.getString("size"), resultSet.getDouble("cost"));
 		}
 		catch(java.sql.SQLException e){
 			System.out.println(e);

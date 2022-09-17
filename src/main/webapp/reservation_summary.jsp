@@ -116,39 +116,7 @@
 	else{
 		response.sendRedirect("/Provisio");
 	}%>
-			<%
-			/*
-				String checkin = String.valueOf(session.getAttribute("check_in"));
-				String checkout = String.valueOf(session.getAttribute("check_out"));
-				String room = String.valueOf(session.getAttribute("room"));
-				Boolean wifi = (Boolean)session.getAttribute("wifi");
-				Boolean breakfast = (Boolean)session.getAttribute("breakfast");
-				Boolean parking = (Boolean)session.getAttribute("parking");
-				int guests = Integer.valueOf((String)session.getAttribute("guests"));
-				long timeDiff = checkout.getTime() - checkin.getTime();
-				long dayDiff = TimeUnit.DAYS.convert(timeDiff,TimeUnit.MILLISECONDS);
-				int points = ((int)dayDiff * 150);
-				*/
-			%>
-			<!-- Brittany, you will need this or something similar to calulate loyalty points 
-			<% 
-			//if (request.getMethod().equals("POST")){
-				//SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-				//Date checkin = format.parse(request.getParameter("check_in"));
-				//Date checkout = format.parse(request.getParameter("check_out"));
-				//long timeDiff = checkout.getTime() - checkin.getTime();
-				//long dayDiff = TimeUnit.DAYS.convert(timeDiff,TimeUnit.MILLISECONDS);
-				//int points = ((int)dayDiff * 150);
-				//}  
-			%> -->
-			
-			<%
-				/*ArrayList<Room> rooms = roomBean.getRooms();
-				
-				for(Room room : rooms){
-					out.print("<option value='" + room.id + "'>" + room.size + "</option>");
-				}*/
-			%>
+	
 </body>
 <style type="text/css">
 
