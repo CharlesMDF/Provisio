@@ -55,35 +55,51 @@
 				</tr>
 				<tr>
 				  <td id="displayData">Location</td>
-				  <td id="displayData">Chicago</td>
+				  <td id="displayData"><% out.print(res.location_name); %></td>
 				</tr>
 				<tr id="displayData">
 				  <td id="displayData">Room Size</td>
-				  <td id="displayData">King</td>
+				  <td id="displayData"><% out.print(res.size); %></td>
 				</tr>
 				<tr id="displayData">
 				  <td id="displayData">Number of Guests</td>
-				  <td id="displayData">2</td>
+				  <td id="displayData"><% out.print(res.number_of_guests); %></td>
 				</tr>
 				<tr id="displayData">
 				  <td id="displayData">Wifi</td>
-				  <td id="displayData">Y</td>
+				  <td id="displayData"><% 
+				  if(res.wifi){
+					  out.print("Selected");
+				  } else {
+					  out.print("Not Selected");
+				  } %></td>
 				</tr>
 				<tr id="displayData">
 				  <td id="displayData">Breakfast</td>
-				  <td id="displayData">N</td>
+				  <td id="displayData"><% 
+				  if(res.breakfast){
+					  out.print("Selected");
+				  } else {
+					  out.print("Not Selected");
+				  } %></td>
 				</tr>
 				<tr id="displayData">
 				  <td id="displayData">Parking</td>
-				  <td id="displayData">Y</td>
+				  <td id="displayData"><% 
+				  if(res.parking){
+					  out.print("Selected");
+				  } else {
+					  out.print("Not Selected");
+				  } %></td>
 				</tr>
 				</table>
 				
 				<div id="arrows">
 					<table>
 					<tr>
-					  <td><input id="previous" class="button" type="submit" value="Previous"/></td>
-					  <td><input id="next" class="button" type="submit" value="Next"/></td>
+					
+					  <!--<td><input id="previous" class="button" type="submit" value="Previous"/></td>
+					  <td><input id="next" class="button" type="submit" value="Next"/></td>-->
 					</tr>
 					    
 					</table>
