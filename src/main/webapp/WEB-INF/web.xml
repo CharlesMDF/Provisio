@@ -28,6 +28,10 @@
 	    <servlet-name>ReservationSummary</servlet-name>
 	    <jsp-file>/reservation_summary.jsp</jsp-file>
 	</servlet>
+	<servlet>
+	    <servlet-name>PreviousReservation</servlet-name>
+	    <jsp-file>/previous_reservation.jsp</jsp-file>
+	</servlet>
 	
 	<servlet-mapping>
 	    <servlet-name>Registration</servlet-name>
@@ -48,5 +52,9 @@
 	<servlet-mapping>
 	    <servlet-name>ReservationSummary</servlet-name>
 	    <url-pattern>/booking/summary</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	    <servlet-name>PreviousReservation</servlet-name>
+	    <url-pattern>/previous</url-pattern>
 	</servlet-mapping>
 </web-app>
