@@ -109,7 +109,7 @@
 		<input type="hidden" name="loyalty_points" value="<%=points%>" />
 		<input type="hidden" name="user_id" value="<%=session.getAttribute("user_id")%>" />
 		
-		<div class="subContainer footer">
+		<div class="subContainer">
 	        <button name="submit" type="submit" class="button" value="submit">Submit</button>
 	        <a href="../booking" class="button">Cancel</a>
 	    </div>
@@ -121,8 +121,11 @@
 	else{
 		response.sendRedirect("/Provisio");
 	}%>
-	
+  
 </body>
+
+<jsp:include page="../Footer.jsp"/>
+
 <style type="text/css">
 
 body{
@@ -171,6 +174,7 @@ td{
 	justify-content: space-evenly;
   	align-content: center;
 }
+
 .subContainer{
 	display: flex;
 	justify-content: center;
@@ -178,10 +182,6 @@ td{
 	margin: 5px;
 }
 
-.footer{
-	margin: 10px;
-	text-align: center;
-}
 
 .button {
 

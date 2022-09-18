@@ -61,6 +61,9 @@
 		}    
 	%>
 </body>
+
+<jsp:include page="Footer.jsp"/>
+
 <style type="text/css">
 	.container-login {
 	  color: black;  

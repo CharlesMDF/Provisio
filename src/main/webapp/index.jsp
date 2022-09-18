@@ -48,7 +48,11 @@
 	    <a href="#" class="button">Locations</a>
 	  </div>
 	</div>
+	
+	<jsp:include page="Footer.jsp"/>
+	
 </body>
+
 
 <style type="text/css">
 #welcome {
