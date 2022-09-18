@@ -1,7 +1,10 @@
 @charset "UTF-8";
 
 body{
-	font-family: "Georgia"
+	font-family: "Georgia";
+	display: flex;
+  	flex-direction: column;
+  	min-height: 100vh;
 }
 
 *{

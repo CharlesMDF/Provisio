@@ -144,8 +144,6 @@
 		justify-content: center;
 		align-items: center;	
 	}	
-		
-		
 	#displayData{
 	  border: 1px solid;
 	  background-color: #F7F4EA;
