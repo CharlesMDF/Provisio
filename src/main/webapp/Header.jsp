@@ -10,7 +10,6 @@
 	<div id = "navbar"> 
     	<a href = "/Provisio">Home</a>
         <a href = "/Provisio/about_us">About Us</a>
-        <a href = "#contact">Contact Us</a>
         <a href = "#locations">Locations</a>
         <% 
         	if(session.getAttribute("user_id") == null){
@@ -20,6 +19,7 @@
         		<%
         	} else{
         		%>
+        			<a href = "/Provisio/previous">Previous Reservations</a>
         			<a href = "#loyalty">Loyalty Points</a>
         		<%
         	}
