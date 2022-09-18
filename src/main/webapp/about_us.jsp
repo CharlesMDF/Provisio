@@ -82,6 +82,9 @@
 		</div>
 	</div>
 </body>
+
+<jsp:include page="Footer.jsp"/>
+
 <style type="text/css">
 	body {
 	  background-color: #F7F4EA;

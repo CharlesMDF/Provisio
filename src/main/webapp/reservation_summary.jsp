@@ -104,7 +104,7 @@
 		<input type="hidden" name="loyalty_points" value="<%=points%>" />
 		<input type="hidden" name="user_id" value="<%=session.getAttribute("user_id")%>" />
 		
-		<div class="subContainer footer">
+		<div class="subContainer">
 	        <button name="submit" type="submit" class="button" value="submit">Submit</button>
 	        <a href="../booking" class="button">Cancel</a>
 	    </div>
@@ -116,40 +116,45 @@
 	else{
 		response.sendRedirect("/Provisio");
 	}%>
-			<%
-			/*
-				String checkin = String.valueOf(session.getAttribute("check_in"));
-				String checkout = String.valueOf(session.getAttribute("check_out"));
-				String room = String.valueOf(session.getAttribute("room"));
-				Boolean wifi = (Boolean)session.getAttribute("wifi");
-				Boolean breakfast = (Boolean)session.getAttribute("breakfast");
-				Boolean parking = (Boolean)session.getAttribute("parking");
-				int guests = Integer.valueOf((String)session.getAttribute("guests"));
-				long timeDiff = checkout.getTime() - checkin.getTime();
-				long dayDiff = TimeUnit.DAYS.convert(timeDiff,TimeUnit.MILLISECONDS);
-				int points = ((int)dayDiff * 150);
-				*/
-			%>
-			<!-- Brittany, you will need this or something similar to calulate loyalty points 
-			<% 
-			//if (request.getMethod().equals("POST")){
-				//SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-				//Date checkin = format.parse(request.getParameter("check_in"));
-				//Date checkout = format.parse(request.getParameter("check_out"));
-				//long timeDiff = checkout.getTime() - checkin.getTime();
-				//long dayDiff = TimeUnit.DAYS.convert(timeDiff,TimeUnit.MILLISECONDS);
-				//int points = ((int)dayDiff * 150);
-				//}  
-			%> -->
+
+	<%
+	/*
+		String checkin = String.valueOf(session.getAttribute("check_in"));
+		String checkout = String.valueOf(session.getAttribute("check_out"));
+		String room = String.valueOf(session.getAttribute("room"));
+		Boolean wifi = (Boolean)session.getAttribute("wifi");
+		Boolean breakfast = (Boolean)session.getAttribute("breakfast");
+		Boolean parking = (Boolean)session.getAttribute("parking");
+		int guests = Integer.valueOf((String)session.getAttribute("guests"));
+		long timeDiff = checkout.getTime() - checkin.getTime();
+		long dayDiff = TimeUnit.DAYS.convert(timeDiff,TimeUnit.MILLISECONDS);
+		int points = ((int)dayDiff * 150);
+	*/
+	%>
+	<!-- Brittany, you will need this or something similar to calulate loyalty points 
+	<% 
+		//if (request.getMethod().equals("POST")){
+		//SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		//Date checkin = format.parse(request.getParameter("check_in"));
+		//Date checkout = format.parse(request.getParameter("check_out"));
+		//long timeDiff = checkout.getTime() - checkin.getTime();
+		//long dayDiff = TimeUnit.DAYS.convert(timeDiff,TimeUnit.MILLISECONDS);
+		//int points = ((int)dayDiff * 150);
+		//}  
+	%> -->
 			
-			<%
-				/*ArrayList<Room> rooms = roomBean.getRooms();
+	<%
+		/*ArrayList<Room> rooms = roomBean.getRooms();
 				
-				for(Room room : rooms){
-					out.print("<option value='" + room.id + "'>" + room.size + "</option>");
-				}*/
-			%>
+			for(Room room : rooms){
+				out.print("<option value='" + room.id + "'>" + room.size + "</option>");
+		}*/
+	%>
+
 </body>
+
+<jsp:include page="../Footer.jsp"/>
+
 <style type="text/css">
 
 body{
@@ -198,6 +203,7 @@ td{
 	justify-content: space-evenly;
   	align-content: center;
 }
+
 .subContainer{
 	display: flex;
 	justify-content: center;
@@ -205,10 +211,6 @@ td{
 	margin: 5px;
 }
 
-.footer{
-	margin: 10px;
-	text-align: center;
-}
 
 .button {
 

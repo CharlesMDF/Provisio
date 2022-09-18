@@ -31,7 +31,6 @@
 	</form>
 
 	
-	
 	<%if (request.getMethod().equals("POST")){
 		
 		try{
@@ -116,6 +115,9 @@
 	}%>
 
 </body>
+
+<jsp:include page="Footer.jsp"/>
+
 <style type="text/css">
 	body {
 		  background-color: #C0B9DD;
