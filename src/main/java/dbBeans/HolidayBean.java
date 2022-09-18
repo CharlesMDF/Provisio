@@ -1,26 +1,84 @@
 package dbBeans;
 
 import java.util.Date;
-import java.util.Calendar;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class HolidayBean {
 	
-	public static int getHolidaycount(Date start, Date end) {
+	public int getHolidaycount(Date start, Date end) {
 		int holidayCount = 0;
 		
+		int startYear = start.getYear() + 1900;
+		int endYear = end.getYear() + 1900;
+		
+		int yearDiff = endYear - startYear;
+		
+		try {
+			for(int i = 0; i <= yearDiff; i++) {
+				System.out.println(yearDiff);
+				Date newYears = newYears(startYear + i);
+				Date mlkDay = mlkDay(startYear  + i);
+				Date presidentsDay = presidentsDay(startYear + i);
+				Date memorialDay = memorialDay(startYear + i);
+				Date juneteenth = juneteenth(startYear + i);
+				Date fourthOfJuly = fourthOfJuly(startYear + i);
+				Date laborDay = laborDay(startYear + i);
+				Date columbusDay = columbusDay(startYear + i);
+				Date veteransDay = veteransDay(startYear + i);
+				Date thanksgiving = thanksgiving(startYear + i);
+				Date christmas = christmas(startYear + i);
+				
+				if(start.compareTo(newYears) <= 0 && end.compareTo(newYears) > 0 ){
+					holidayCount++;
+				}
+				if(start.compareTo(mlkDay) <= 0 && end.compareTo(mlkDay) > 0 ){
+					holidayCount++;
+				}
+				if(start.compareTo(presidentsDay) <= 0 && end.compareTo(presidentsDay) > 0 ){
+					holidayCount++;
+				}
+				if(start.compareTo(memorialDay) <= 0 && end.compareTo(memorialDay) > 0 ){
+					holidayCount++;
+				}
+				if(start.compareTo(juneteenth) <= 0 && end.compareTo(juneteenth) > 0 ){
+					holidayCount++;
+				}
+				if(start.compareTo(fourthOfJuly) <= 0 && end.compareTo(fourthOfJuly) > 0 ){
+					holidayCount++;
+				}
+				if(start.compareTo(laborDay) <= 0 && end.compareTo(laborDay) > 0 ){
+					holidayCount++;
+				}
+				if(start.compareTo(columbusDay) <= 0 && end.compareTo(columbusDay) > 0 ){
+					holidayCount++;
+				}
+				if(start.compareTo(veteransDay) <= 0 && end.compareTo(veteransDay) > 0 ){
+					holidayCount++;
+				}
+				if(start.compareTo(thanksgiving) <= 0 && end.compareTo(thanksgiving) > 0 ){
+					holidayCount++;
+				}
+				
+				if(start.compareTo(christmas) <= 0 && end.compareTo(christmas) > 0 ){
+					holidayCount++;
+				}
+			}
+			
+		} catch(ParseException e){
+			System.out.print(e);
+		}
 		
 		return holidayCount;
 	}
 	
-	private Date newYears(String year) throws ParseException {		
-		String newYears = String.format("%s-01-01",year);
+	private static Date newYears(int year) throws ParseException {		
+		String newYears = String.format("%d-01-01",year);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		return format.parse(newYears);
 	}
 	
-	private Date mlkDay(String year) throws ParseException {
+	private static Date mlkDay(int year) throws ParseException {
 		Date newYears = newYears(year);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		
@@ -42,8 +100,8 @@ public class HolidayBean {
 		}
 	}
 	
-	private Date presidentsDay(String year) throws ParseException {
-		String firstOfFebuary = String.format("%s-02-01",year);
+	private static Date presidentsDay(int year) throws ParseException {
+		String firstOfFebuary = String.format("%d-02-01",year);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		
 		switch(format.parse(firstOfFebuary).getDay()) {
@@ -64,8 +122,8 @@ public class HolidayBean {
 		}
 	}
 	
-	private Date memorialDay(String year) throws ParseException {
-		String firstOfMay = String.format("%s-05-01",year);
+	private static Date memorialDay(int year) throws ParseException {
+		String firstOfMay = String.format("%d-05-01",year);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		
 		switch(format.parse(firstOfMay).getDay()) {
@@ -86,20 +144,20 @@ public class HolidayBean {
 		}
 	}
 	
-	private Date juneteenth(String year) throws ParseException {		
-		String juneteenth = String.format("%s-06-19",year);
+	private static Date juneteenth(int year) throws ParseException {		
+		String juneteenth = String.format("%d-06-19",year);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		return format.parse(juneteenth);
 	}
 	
-	private Date fourthOfJuly(String year) throws ParseException {		
-		String fourthOfJuly = String.format("%s-07-04",year);
+	private static Date fourthOfJuly(int year) throws ParseException {		
+		String fourthOfJuly = String.format("%d-07-04",year);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		return format.parse(fourthOfJuly);
 	}
 	
-	private Date laborDay(String year) throws ParseException {
-		String firstOfSeptember = String.format("%s-09-01",year);
+	private static Date laborDay(int year) throws ParseException {
+		String firstOfSeptember = String.format("%d-09-01",year);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		
 		switch(format.parse(firstOfSeptember).getDay()) {
@@ -119,8 +177,8 @@ public class HolidayBean {
 	        	return format.parse(year + "-09-06");
 		}
 	}
-	private Date columbusDay(String year) throws ParseException {
-		String firstOfOctober = String.format("%s-10-01",year);
+	private static Date columbusDay(int year) throws ParseException {
+		String firstOfOctober = String.format("%d-10-01",year);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		
 		switch(format.parse(firstOfOctober).getDay()) {
@@ -141,14 +199,14 @@ public class HolidayBean {
 		}
 	}
 	
-	private Date veteransDay(String year) throws ParseException {		
-		String veteransDay = String.format("%s-11-11",year);
+	private static Date veteransDay(int year) throws ParseException {		
+		String veteransDay = String.format("%d-11-11",year);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		return format.parse(veteransDay);
 	}
 	
-	private Date thanksgiving(String year) throws ParseException {
-		String firstOfNovember = String.format("%s-11-01",year);
+	private static Date thanksgiving(int year) throws ParseException {
+		String firstOfNovember = String.format("%d-11-01",year);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		
 		switch(format.parse(firstOfNovember).getDay()) {
@@ -169,8 +227,8 @@ public class HolidayBean {
 		}
 	}
 	
-	private Date christmas(String year) throws ParseException {		
-		String christmas = String.format("%s-12-25",year);
+	private static Date christmas(int year) throws ParseException {		
+		String christmas = String.format("%d-12-25",year);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		return format.parse(christmas);
 	}

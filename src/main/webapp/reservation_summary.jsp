@@ -18,6 +18,7 @@
 <jsp:include page="../Header.jsp" />
 <body>
 <jsp:useBean id = "roomBean" class = "dbBeans.RoomBean"/>
+<jsp:useBean id = "holidayBean" class = "dbBeans.HolidayBean"/>
 
 	<%if (request.getMethod().equals("POST")){	%>
 	
@@ -28,6 +29,8 @@
 		Date checkout = format.parse(request.getParameter("check_out"));
 		long timeDiff = checkout.getTime() - checkin.getTime();
 		long dayDiff = TimeUnit.DAYS.convert(timeDiff,TimeUnit.MILLISECONDS);
+		
+		int holidayCount = holidayBean.getHolidaycount(checkin, checkout);
 		
 		%>
 		<h2>Reservation Summary</h2>
@@ -48,6 +51,8 @@
 					<tr>
 						<%	
 							Room selectedRoom = roomBean.getRoomById(request.getParameter("room-size"));
+							dayDiff -= holidayCount;
+							totalCost += ((selectedRoom.cost * 0.05) + selectedRoom.cost) * holidayCount;
 							totalCost += selectedRoom.cost * dayDiff;
 							selectedRoom.size = selectedRoom.size.replace("_", " ");
 						%>
@@ -91,7 +96,7 @@
 					<tr>
 						<%String finalCost = String.format("$%.2f",totalCost); %>
 						<td>Total Cost: <% out.print(finalCost);%></td>
-					</tr>	
+					</tr>
 				</table>
 			</div>
 		</div>
