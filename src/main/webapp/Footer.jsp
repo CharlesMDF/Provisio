@@ -8,7 +8,7 @@
 <body>
 	<footer>
 		<p class="copyright">
-			© Copyright 2022 Fisher, Boettcher, Russell-Phipps, Normandin
+			Â© Copyright 2022 Fisher, Boettcher, Russell-Phipps, Normandin
 		</p>
 	</footer>
 </body>

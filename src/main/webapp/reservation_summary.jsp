@@ -18,6 +18,7 @@
 <jsp:include page="../Header.jsp" />
 <body>
 <jsp:useBean id = "roomBean" class = "dbBeans.RoomBean"/>
+<jsp:useBean id = "holidayBean" class = "dbBeans.HolidayBean"/>
 
 	<%if (request.getMethod().equals("POST")){	%>
 	
@@ -28,6 +29,8 @@
 		Date checkout = format.parse(request.getParameter("check_out"));
 		long timeDiff = checkout.getTime() - checkin.getTime();
 		long dayDiff = TimeUnit.DAYS.convert(timeDiff,TimeUnit.MILLISECONDS);
+		
+		int holidayCount = holidayBean.getHolidaycount(checkin, checkout);
 		
 		%>
 		<h2>Reservation Summary</h2>
@@ -48,6 +51,8 @@
 					<tr>
 						<%	
 							Room selectedRoom = roomBean.getRoomById(request.getParameter("room-size"));
+							dayDiff -= holidayCount;
+							totalCost += ((selectedRoom.cost * 0.05) + selectedRoom.cost) * holidayCount;
 							totalCost += selectedRoom.cost * dayDiff;
 							selectedRoom.size = selectedRoom.size.replace("_", " ");
 						%>
@@ -91,7 +96,7 @@
 					<tr>
 						<%String finalCost = String.format("$%.2f",totalCost); %>
 						<td>Total Cost: <% out.print(finalCost);%></td>
-					</tr>	
+					</tr>
 				</table>
 			</div>
 		</div>
@@ -116,41 +121,7 @@
 	else{
 		response.sendRedirect("/Provisio");
 	}%>
-
-	<%
-	/*
-		String checkin = String.valueOf(session.getAttribute("check_in"));
-		String checkout = String.valueOf(session.getAttribute("check_out"));
-		String room = String.valueOf(session.getAttribute("room"));
-		Boolean wifi = (Boolean)session.getAttribute("wifi");
-		Boolean breakfast = (Boolean)session.getAttribute("breakfast");
-		Boolean parking = (Boolean)session.getAttribute("parking");
-		int guests = Integer.valueOf((String)session.getAttribute("guests"));
-		long timeDiff = checkout.getTime() - checkin.getTime();
-		long dayDiff = TimeUnit.DAYS.convert(timeDiff,TimeUnit.MILLISECONDS);
-		int points = ((int)dayDiff * 150);
-	*/
-	%>
-	<!-- Brittany, you will need this or something similar to calulate loyalty points 
-	<% 
-		//if (request.getMethod().equals("POST")){
-		//SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		//Date checkin = format.parse(request.getParameter("check_in"));
-		//Date checkout = format.parse(request.getParameter("check_out"));
-		//long timeDiff = checkout.getTime() - checkin.getTime();
-		//long dayDiff = TimeUnit.DAYS.convert(timeDiff,TimeUnit.MILLISECONDS);
-		//int points = ((int)dayDiff * 150);
-		//}  
-	%> -->
-			
-	<%
-		/*ArrayList<Room> rooms = roomBean.getRooms();
-				
-			for(Room room : rooms){
-				out.print("<option value='" + room.id + "'>" + room.size + "</option>");
-		}*/
-	%>
-
+  
 </body>
 
 <jsp:include page="../Footer.jsp"/>
