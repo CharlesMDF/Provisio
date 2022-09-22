@@ -16,6 +16,9 @@
 	if(session.getAttribute("user_id") == null){
 		response.sendRedirect("login");
 	}
+	else {
+		
+	
 	ArrayList<Reservation> loyalty = reservationBean.getUserLoyaltyPoints(session.getAttribute("user_id").toString());
 	
 	int total_loyalty = 0;
@@ -63,8 +66,9 @@
 	</table>
 
 </body>
+<jsp:include page="Footer.jsp"/>
 
-
+<%}%>
 <style>
 
 	body{
