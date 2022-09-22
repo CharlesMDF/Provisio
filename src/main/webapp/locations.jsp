@@ -51,7 +51,7 @@
                 <figure>
                     <img class="image" src="images/minneapolis.jpg" alt="Minneapolis">
                     <figcaption class="text"><h2>Activities in Minneapolis:</h2>
-                    <ulclass="list">	
+                    <ul class="list">	
                     <li>Mall of America</li>
                     <li>Minneapolis Institute of Art</li>
                     <li>All Inclusive 3hr Craft Brewery Tour</li> 
