@@ -28,7 +28,7 @@
 				%> 
 				<div class="column-mid">
 	    			<img class="link-image" src="images/login-image.jpg" height = 300px>
-	    			<a href="#" class="button">Loyalty Points</a>
+	    			<a href="loyalty" class="button">Loyalty Points</a>
 	  			</div><%
 			} else{
 				%>

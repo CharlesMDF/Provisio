@@ -2,6 +2,8 @@ package dbBeans;
 
 import java.sql.*;
 import java.sql.Statement;
+import java.util.ArrayList;
+
 import Objects.Reservation;
 
 public class ReservationBean {
@@ -98,6 +100,34 @@ public class ReservationBean {
 		    	}
 		    }
 		    return res;
+		    
+		}
+		catch(java.sql.SQLException e){
+			System.out.println(e);
+			throw new SQLException(e);
+		}
+		finally {
+			provisio.closeDatabase();
+		}
+	}
+	
+	public ArrayList<Reservation> getUserLoyaltyPoints(String userId) throws Exception {
+		DatabaseBean provisio = new DatabaseBean();
+		provisio.connectDatabase();
+		
+		ArrayList<Reservation> reservations = new ArrayList<Reservation>();
+		
+		try{ 
+			ResultSet resultSet  = provisio.getStmt().executeQuery("SELECT * FROM reservations WHERE user_id='" + userId + "'");
+			while(resultSet.next()) {
+				reservations.add(new Reservation(
+						resultSet.getInt("reservation_id"), 
+						resultSet.getString("check_in"),
+						resultSet.getString("check_out"),
+						resultSet.getString("location_name"),
+						resultSet.getInt("loyalty_points")));
+			}
+		    return reservations;
 		    
 		}
 		catch(java.sql.SQLException e){

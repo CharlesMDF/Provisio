@@ -32,6 +32,10 @@
 	    <servlet-name>PreviousReservation</servlet-name>
 	    <jsp-file>/previous_reservation.jsp</jsp-file>
 	</servlet>
+	<servlet>
+	    <servlet-name>LoyaltyPoints</servlet-name>
+	    <jsp-file>/loyalty_points.jsp</jsp-file>
+	</servlet>
 	
 	<servlet-mapping>
 	    <servlet-name>Registration</servlet-name>
@@ -56,5 +60,9 @@
 	<servlet-mapping>
 	    <servlet-name>PreviousReservation</servlet-name>
 	    <url-pattern>/previous</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	    <servlet-name>LoyaltyPoints</servlet-name>
+	    <url-pattern>/loyalty</url-pattern>
 	</servlet-mapping>
 </web-app>
