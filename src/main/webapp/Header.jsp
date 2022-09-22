@@ -20,7 +20,7 @@
         	} else{
         		%>
         			<a href = "/Provisio/previous">Previous Reservations</a>
-        			<a href = "#loyalty">Loyalty Points</a>
+        			<a href = "/Provisio/loyalty">Loyalty Points</a>
         		<%
         	}
         %>
