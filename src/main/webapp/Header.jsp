@@ -10,7 +10,7 @@
 	<div id = "navbar"> 
     	<a href = "/Provisio">Home</a>
         <a href = "/Provisio/about_us">About Us</a>
-        <a href = "#locations">Locations</a>
+        <a href = "locations.jsp">Locations</a>
         <% 
         	if(session.getAttribute("user_id") == null){
         		%>
