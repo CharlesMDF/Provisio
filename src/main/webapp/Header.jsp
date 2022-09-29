@@ -38,7 +38,8 @@
     background-color: #80A1D4;
     width:100%;
     display: flex; 
-    justify-content: center
+    justify-content: center;
+    border-bottom: 2px solid black;
 }
 
 #navbar a {

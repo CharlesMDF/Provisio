@@ -21,7 +21,7 @@ footer {
 	display:block;
 	background-color: #80A1D4;
 	justify-content: center;
-   
+   	border-top: 2px solid black;
 }
 
 body{
