@@ -15,16 +15,16 @@
 <style type="text/css">
 
 footer {
-	flex: 0 0 50px;
+	display: flex;
 	margin-top: auto;
-	padding:10px;
 	width: 100%;
 	display:block;
 	background-color: #80A1D4;
+	justify-content: center;
+   
 }
 
 body{
-	font-family: "Georgia";
 	display: flex;
   	flex-direction: column;
   	min-height: 100vh;
@@ -36,6 +36,7 @@ p.copyright{
 	font-size:0.95em;
 	text-align: center;
 	font-style: italic;
+	padding: 15px 0px;
 }
 
 </style>

@@ -10,7 +10,7 @@
 	<div id = "navbar"> 
     	<a href = "/Provisio">Home</a>
         <a href = "/Provisio/about_us">About Us</a>
-        <a href = "locations.jsp">Locations</a>
+        <a href = "locations">Locations</a>
         <% 
         	if(session.getAttribute("user_id") == null){
         		%>
@@ -33,7 +33,7 @@
 #navbar {
     z-index: 1; 
     top: 0;
-    padding:10px;
+    padding: 6px 0px;
     overflow: hidden;
     background-color: #80A1D4;
     width:100%;
@@ -42,7 +42,7 @@
 }
 
 #navbar a {
-    margin:20px;
+    margin: 10px 30px;
     float: none;
     color: #F7F4EA;
     text-align: center;

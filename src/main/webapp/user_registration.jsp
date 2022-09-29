@@ -67,7 +67,11 @@
 		</div>
 	
 				
-	<style type="text/css">
+	
+	<jsp:include page="Footer.jsp"/>
+</body>
+
+<style type="text/css">
 	.container-Registration {
 	  color: black;  
 	  background-color: #C0B9DD;
@@ -105,9 +109,6 @@
 	color: red;
 	font-size: 20px;
 	}
-	</style>
-</body>
-
-<jsp:include page="Footer.jsp"/>
+</style>
 
 </html>

@@ -34,7 +34,7 @@
                     <h1>Visit us in Orlando!</h1>            
                 <figure>
                     <img class="image" src="images/orlando.jpg" alt="Orlando">
-                    <figcaption class="text"><h2>Activities Orlando:</h2>
+                    <figcaption class="text"><h2>Activities in Orlando:</h2>
                     <ul class="list">
                     <li>Disney World tickets</li>
                     <li>Universal Studios tickets</li>
@@ -51,12 +51,12 @@
                 <figure>
                     <img class="image" src="images/minneapolis.jpg" alt="Minneapolis">
                     <figcaption class="text"><h2>Activities in Minneapolis:</h2>
-                    <ul class="list">	
-                    <li>Mall of America</li>
-                    <li>Minneapolis Institute of Art</li>
-                    <li>All Inclusive 3hr Craft Brewery Tour</li> 
-                    <li>Tour Prince's home at Paisley Park</li> 
-                    </ul>
+	                    <ul class="list">	
+	                    <li>Mall of America</li>
+	                    <li>Minneapolis Institute of Art</li>
+	                    <li>All Inclusive 3hr Craft Brewery Tour</li> 
+	                    <li>Tour Prince's home at Paisley Park</li> 
+	                    </ul>
                     </figcaption>
                 </figure>
                 </div>
@@ -67,6 +67,8 @@
 </div>
 <jsp:include page="Footer.jsp"/>
 
+
+</body>
 <style type="text/css">
 body {
 	 background-color: #F7F4EA;
@@ -77,38 +79,41 @@ body {
 	 background-color: #C0B9DD;
 	 border-radius: 30px;
      border: 2px solid black;
-     width: 1000px;
-	 height: 100px;
 	 font-size: 35px;
-	 padding: 10px;
+	 padding: 15px 50px;
 	 margin: 15px;
 }
+
 .main{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
+
 #locations-gallery {
-  padding: 75px;
+  padding: 25px;
   display: grid;
   column-gap: 30px;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 450px 450px 450px;
   justify-content: space-evenly;
   align-content: center;
 }
+
 .image{
-	 width: 575px;
-	 height: 275px;
+	 width: 100%;
+	 height: 200px;
 	 border: 2px solid black;
 	 object-fit: cover;
 }
+
 .text{
 	 border: 2px solid black;
-	 object-fit: cover;
 	 background-color: #80A1D4;
+	 height: 175px;
+	 width: 95%;
 	 font-size: 20px;
-	 padding: 10px;
+	 padding: 2.5%;
 }
 h1, h2{
 text-align:center;
@@ -116,6 +121,5 @@ text-align:center;
 .list{
 	list-style-position: inside;	
 }
-
-</body>
+</style>
 </html>

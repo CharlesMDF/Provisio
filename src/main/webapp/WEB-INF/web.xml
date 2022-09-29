@@ -36,6 +36,10 @@
 	    <servlet-name>LoyaltyPoints</servlet-name>
 	    <jsp-file>/loyalty_points.jsp</jsp-file>
 	</servlet>
+	<servlet>
+	    <servlet-name>Locations</servlet-name>
+	    <jsp-file>/locations.jsp</jsp-file>
+	</servlet>
 	
 	<servlet-mapping>
 	    <servlet-name>Registration</servlet-name>
@@ -64,5 +68,9 @@
 	<servlet-mapping>
 	    <servlet-name>LoyaltyPoints</servlet-name>
 	    <url-pattern>/loyalty</url-pattern>
+	</servlet-mapping>
+		<servlet-mapping>
+	    <servlet-name>Locations</servlet-name>
+	    <url-pattern>/locations</url-pattern>
 	</servlet-mapping>
 </web-app>

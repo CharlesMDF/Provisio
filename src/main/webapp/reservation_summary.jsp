@@ -121,10 +121,10 @@
 	else{
 		response.sendRedirect("/Provisio");
 	}%>
-  
+  <jsp:include page="../Footer.jsp"/>
 </body>
 
-<jsp:include page="../Footer.jsp"/>
+
 
 <style type="text/css">
 

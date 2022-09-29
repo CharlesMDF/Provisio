@@ -11,7 +11,7 @@
 
 	<jsp:include page="Header.jsp" /> 
 	<div class="container-top">
-	  <img src="images/hotel.jpg" width = 100%>
+	  <img class = "main_image" src="images/hotel.jpg" width = 100%>
 	  <div class="centered">
 	      <h1 id = "title">Make Memories with Provisio</h1>    
 	      <p id = "hotel-msg">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -45,7 +45,7 @@
 	  </div>
 	  <div class="column-mid">
 	    <img class="link-image" src="images/locations-image.jpg"  height = 300px>
-	    <a href="#" class="button">Locations</a>
+	    <a href="locations" class="button">Locations</a>
 	  </div>
 	</div>
 	
@@ -58,7 +58,10 @@
 #welcome {
 text-align: center;
 }
-
+.main_image{
+	object-fit: contain;
+	
+}
 #hotel-msg{
   margin: 25px;
 }
@@ -72,15 +75,18 @@ text-align: center;
   text-align: center;
   color: black;
   min-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
 }
 
 .centered {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: rgba(247, 244, 234, 0.7);
   border: 4px solid black;
+  max-width: 1000px;
+  justify-self: center;
 }
 
 * {

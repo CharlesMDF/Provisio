@@ -7,9 +7,9 @@
 <title>Provisio About Us</title>
 <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
-<jsp:include page="Header.jsp" /> 
+ 
 <body>
-	
+	<jsp:include page="Header.jsp" />
 	<div class="main">
 		<div id="header"><h1 >Welcome to Provisio!</h1></div>
 	
@@ -81,9 +81,10 @@
 		   		</div>
 		</div>
 	</div>
+	<jsp:include page="Footer.jsp"/>
 </body>
 
-<jsp:include page="Footer.jsp"/>
+
 
 <style type="text/css">
 	body {
