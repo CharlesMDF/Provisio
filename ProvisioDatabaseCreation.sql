@@ -87,7 +87,7 @@ VALUES('Double','115.5');
 INSERT INTO room (size, cost)
 VALUES('Queen','131.25');
 INSERT INTO room (size, cost)
-VALUES('Double_Queen','157.5');
+VALUES('Double Queen','157.5');
 INSERT INTO room (size, cost)
 VALUES('King','173.25');
 

@@ -16,7 +16,8 @@
 	<img src="images/reservation.jpg" width = 100%>
 	<h1 id = "title">Book Your Vacation</h1>
 	<hr>
-		<form method="post" action="booking/summary"  id = "reservation">
+		<form method="post" action="booking/summary">
+			<div id = "reservation">
 			<table id = "userInputs">
 				<tr>
 					<td>Name:</td>
@@ -89,15 +90,16 @@
 				</div>
 				
 			</div>
-			
-		</form>
-		<table id = "review">
+			</div>
+			<table id = "review">
 				<tr>
 					<td>
 						<input type="submit" value="Review" class="button"/>
 					</td>
 				</tr>	
 			</table>
+		</form>
+				
 		<%
 			if(session.getAttribute("user_id") == null){
 				response.sendRedirect("login");
