@@ -16,7 +16,6 @@ public class HolidayBean {
 		
 		try {
 			for(int i = 0; i <= yearDiff; i++) {
-				System.out.println(yearDiff);
 				Date newYears = newYears(startYear + i);
 				Date mlkDay = mlkDay(startYear  + i);
 				Date presidentsDay = presidentsDay(startYear + i);
@@ -25,6 +24,7 @@ public class HolidayBean {
 				Date fourthOfJuly = fourthOfJuly(startYear + i);
 				Date laborDay = laborDay(startYear + i);
 				Date columbusDay = columbusDay(startYear + i);
+				Date halloween = halloween(startYear + i);
 				Date veteransDay = veteransDay(startYear + i);
 				Date thanksgiving = thanksgiving(startYear + i);
 				Date christmas = christmas(startYear + i);
@@ -53,9 +53,13 @@ public class HolidayBean {
 				if(start.compareTo(columbusDay) <= 0 && end.compareTo(columbusDay) > 0 ){
 					holidayCount++;
 				}
+				if(start.compareTo(halloween) <= 0 && end.compareTo(halloween) > 0 ){
+					holidayCount++;
+				}
 				if(start.compareTo(veteransDay) <= 0 && end.compareTo(veteransDay) > 0 ){
 					holidayCount++;
 				}
+				System.out.println(thanksgiving);
 				if(start.compareTo(thanksgiving) <= 0 && end.compareTo(thanksgiving) > 0 ){
 					holidayCount++;
 				}
@@ -199,6 +203,12 @@ public class HolidayBean {
 		}
 	}
 	
+	private static Date halloween(int year) throws ParseException {		
+		String veteransDay = String.format("%d-10-31",year);
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		return format.parse(veteransDay);
+	}
+	
 	private static Date veteransDay(int year) throws ParseException {		
 		String veteransDay = String.format("%d-11-11",year);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -211,19 +221,19 @@ public class HolidayBean {
 		
 		switch(format.parse(firstOfNovember).getDay()) {
 			case 0 : // Sunday
-	        	return format.parse(year + "-10-26");
+	        	return format.parse(year + "-11-26");
 	        case 1 : // Monday
-	        	return format.parse(year + "-10-25");
+	        	return format.parse(year + "-11-25");
 	        case 2 : // Tuesday
-	        	return format.parse(year + "-10-25");
+	        	return format.parse(year + "-11-24");
 	        case 3 : // Wednesday
-	        	return format.parse(year + "-10-23");
+	        	return format.parse(year + "-11-23");
 	        case 4 : // Thursday
-	        	return format.parse(year + "-10-22");
+	        	return format.parse(year + "-11-22");
 	        case 5 : // Friday
-	        	return format.parse(year + "-10-28");
+	        	return format.parse(year + "-11-28");
 	        default : // Saturday
-	        	return format.parse(year + "-10-27");
+	        	return format.parse(year + "-11-27");
 		}
 	}
 	

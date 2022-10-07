@@ -46,17 +46,27 @@
 						<td>Name:  <%out.print(request.getParameter("guest_name"));%></td>
 					</tr>
 					<tr>
+						<td>Number of Nights:  <%out.print(dayDiff);%></td>
+					</tr>
+					<tr>
 						<td>Location:  <%out.print(request.getParameter("location_name"));%></td>
 					</tr>
 					<tr>
 						<%	
 							Room selectedRoom = roomBean.getRoomById(request.getParameter("room-size"));
-							dayDiff -= holidayCount;
+							long remainingDays = dayDiff - holidayCount;
 							totalCost += ((selectedRoom.cost * 0.05) + selectedRoom.cost) * holidayCount;
-							totalCost += selectedRoom.cost * dayDiff;
+							totalCost += selectedRoom.cost * remainingDays;
 							selectedRoom.size = selectedRoom.size.replace("_", " ");
 						%>
 						<td>Room size:  <%out.print(selectedRoom.size);%></td>
+					</tr>
+					<tr>
+						<%String roomCost = String.format("$%.2f",totalCost); %>
+						<td>Room Cost:  <%out.print(roomCost);
+						if(holidayCount > 0){
+							out.print(" (%5 Holiday Charge) ");
+						}%></td>
 					</tr>
 					<tr>
 						<td>Number of Guests:  <%out.print(request.getParameter("number_of_guests"));%></td>
@@ -68,21 +78,29 @@
 						<td>Check-out Date:  <%out.print(request.getParameter("check_out"));%></td>
 					</tr>
 					<tr>
-						<td>Selected Amenities:
-						<% if(request.getParameter("amenity1") != null){
+						<td>Selected Amenities
+						<% 
+						int selectedAmenitise = 0;
+						if(request.getParameter("amenity1") != null){
+							selectedAmenitise++;
 							totalCost += 8.99 * dayDiff;
-							out.print(request.getParameter("amenity1"));
+							out.print("<br/> &nbsp;&nbsp;" + request.getParameter("amenity1") + ": &nbsp;&nbsp;$" + (8.99 * dayDiff));
 							%><input type="hidden" name="amenity1" value="1" /><% 
 						}%>
 						<% if(request.getParameter("amenity2") != null){
+							selectedAmenitise++;
 							totalCost += 19.99 * dayDiff;
-							out.print(request.getParameter("amenity2"));
+							out.print("<br/> &nbsp;&nbsp;" + request.getParameter("amenity2")  + ": &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$" + (19.99 * dayDiff));
 							%><input type="hidden" name="amenity2" value="2" /><%
 						}%>
 						<% if(request.getParameter("amenity3") != null){
+							selectedAmenitise++;
 							totalCost += 12.99;
-							out.print(request.getParameter("amenity3"));
+							out.print("<br/> &nbsp;&nbsp;" + request.getParameter("amenity3") + ": &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$12.99");
 							%><input type="hidden" name="amenity3" value="3" /><%
+						}
+						if(selectedAmenitise == 0){
+							out.print(": None");
 						}
 						%>
 						</td>

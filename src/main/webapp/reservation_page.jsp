@@ -35,10 +35,10 @@
 					<td>Room Size:</td>
 					
 						<td><select id="selectRoomSize" name = "room-size">
-							<option value="1">Double</option>
-							<option value="2">Queen</option>
-							<option value="3">Double Queen</option>
-							<option value="4">King</option>
+							<option value="1">Double: $115.50 Per Night</option>
+							<option value="2">Queen: $131.25 Per Night</option>
+							<option value="3">Double Queen: $157.50 Per Night</option>
+							<option value="4">King: $173.25 Per Night</option>
 						</select></td>
 				</tr>
 				<tr>
@@ -173,7 +173,8 @@ body{
 	bottom: 0;
 	left: 0;
 	right: 0;
-	width: 30%; float: left; 
+	width: 700px; 
+	float: left; 
 }
 
 #review{
