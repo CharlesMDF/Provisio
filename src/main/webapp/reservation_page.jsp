@@ -67,7 +67,7 @@
 	
 				<div class = "checkbox_container">
 				<div>
-				<input type="checkbox" id="amenity1" name="amenity1" value="Breakfast">
+				<input type="checkbox" class="amenity" name="amenity1" value="Breakfast">
 			  	<label for="amenity1"> Breakfast </label>
 				</div>
 				<p>$8.99 per night</p>
@@ -75,7 +75,7 @@
 				
 				<div class = "checkbox_container">
 				<div>
-				<input type="checkbox" id="amenity2" name="amenity2" value="Parking">
+				<input type="checkbox" class="amenity" name="amenity2" value="Parking">
 			  	<label for="amenity2"> Parking &nbsp;&nbsp;&nbsp;&nbsp;</label>
 			  	</div>
 			  	<p>$19.99 per night</p>
@@ -83,7 +83,7 @@
 				
 				<div class = "checkbox_container">
 				<div>
-				<input type="checkbox" id="amenity3" name="amenity3" value="WiFi">
+				<input type="checkbox" class="amenity" name="amenity3" value="WiFi">
 				<label for="amenity3"> WiFi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 				</div>
 				<p>$12.99 flat fee</p>
@@ -204,6 +204,11 @@ th{
 td{
 	font-size: 25px;
 	padding: 4px;
+}
+.amenity{
+	width: 20px;
+	height: 20px;
+	margin: 10px;
 }
 
 </style>
