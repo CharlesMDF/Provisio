@@ -38,7 +38,7 @@
 		
 		<div class="contact">
 		        <div class="contactUs">
-		             <table border="0" cellpadding="5" cellspacing="2" >
+		             <table border="0" cellpadding="5" cellspacing="5" >
 		                <thead>
 		                    <tr>
 		                        <th colspan="2"><div  class="underline-header">Contact Us</div> </th>
@@ -125,6 +125,11 @@
 
 	.contact .contactUs{
 	    padding: 0px 30px 30px 30px;
+	    background-color: #C0B9DD;
+	    border: 2px solid black;
+		margin-bottom: 30px;
+		margin-top: 15px;
+		height: 300px;
 	}
 	
 	#header {
