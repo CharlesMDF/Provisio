@@ -59,7 +59,6 @@ public class HolidayBean {
 				if(start.compareTo(veteransDay) <= 0 && end.compareTo(veteransDay) > 0 ){
 					holidayCount++;
 				}
-				System.out.println(thanksgiving);
 				if(start.compareTo(thanksgiving) <= 0 && end.compareTo(thanksgiving) > 0 ){
 					holidayCount++;
 				}

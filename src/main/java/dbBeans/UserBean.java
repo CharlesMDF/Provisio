@@ -5,7 +5,7 @@ import Objects.*;
 public class UserBean {
 	
 	//create new user, will throw exception if user can not be created
-	public void CreateUser(
+	public int CreateUser(
 			String first_name,
             String last_name,
             String email_address, 
@@ -27,7 +27,10 @@ public class UserBean {
 		//insert user data into database
 		try{
 			provisio.getStmt().executeUpdate("INSERT INTO Users(first_name, last_name, email_address, phone_number, password, password_salt)"+
-		  "VALUES('"+ first_name + "', '" + last_name +"', '" + email_address +"', '" + phone_number +"', '" + encryptedPassword +"', '" + salt +"');");
+		  "VALUES('"+ first_name + "', '" + last_name +"', '" + email_address +"', '" + phone_number +"', '" + encryptedPassword +"', '" + salt +"');", Statement.RETURN_GENERATED_KEYS);
+			ResultSet resultSet = provisio.getStmt().getGeneratedKeys();
+			resultSet.next();
+			return resultSet.getInt(1);
 		}
 		catch(java.sql.SQLException e){
 		      System.out.println("ERROR: " + e);

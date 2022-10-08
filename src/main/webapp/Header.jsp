@@ -25,6 +25,13 @@
         	}
         %>
         <a href = "/Provisio/booking">Book Room</a>
+        <%
+        if(session.getAttribute("user_id") != null){
+        	%>
+				<a href = "/Provisio/logout.jsp">Logout</a>
+			<%
+        }
+        %>
     </div>
 </body>
 

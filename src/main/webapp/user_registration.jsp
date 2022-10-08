@@ -48,12 +48,13 @@
 		<% if (request.getMethod().equals("POST")){
 			
 			try{
-				userBean.CreateUser(
+				int userId = userBean.CreateUser(
 						request.getParameter("first_name"), 
 						request.getParameter("last_name"), 
 						request.getParameter("email_address"), 
 						Integer.parseInt(request.getParameter("phone_number")), 
 						request.getParameter("password"));
+				session.setAttribute("user_id", userId);
 				response.sendRedirect("index.jsp"); 
 			}
 			catch(Exception e){
